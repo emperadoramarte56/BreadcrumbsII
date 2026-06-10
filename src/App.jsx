@@ -16,6 +16,7 @@ import { CartProvider }      from "./context/CartContext";
 import { AccountProvider }   from "./context/AccountContext";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { useAccount }        from "./context/AccountContext";
+import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -45,6 +46,7 @@ function UserRoutes() {
       <Route path="/profile"      element={<UserProfile user={user} />} />
       <Route path="/orders"       element={<UserOrders />} />
       <Route path="/favorites"    element={<UserFavorites />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
